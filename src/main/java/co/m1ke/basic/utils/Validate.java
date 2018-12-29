@@ -58,4 +58,13 @@ public class Validate {
         }
     }
 
+    public static <T> void badIndex(T[] array, int index) {
+        if (index < 0) {
+            throw new IllegalArgumentException("Index (" + index + ") cannot be negative");
+        }
+        if (index > array.length - 1) {
+            throw new ArrayIndexOutOfBoundsException("Index (" + index + " ) is out of range for " + array.length + " (+" + (index - (array.length - 1)) + ")");
+        }
+    }
+
 }

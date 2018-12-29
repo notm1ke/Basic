@@ -20,7 +20,7 @@ public class VersionCommand extends TerminalCommand {
             logger.info(help);
             return;
         }
-        logger.info("This service is running " + service.name() + " version " + service.version() + " (Implementing Basic version" + BasicSettings.VERSION.getValue() + ") by " + BasicSettings.AUTHOR.getValue() + ".");
+        logger.info("This service is running " + service.name() + " version " + service.version() + " (Implementing Basic version " + BasicSettings.VERSION.getValue() + ") by " + BasicSettings.AUTHOR.getValue() + ".");
     }
 
 }

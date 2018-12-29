@@ -12,7 +12,7 @@ public class Logger implements JsonSerializable {
     private String name;
 
     public Logger() {
-        this.name = "Matrix";
+        this.name = "Basic";
     }
 
     public Logger(String name) {

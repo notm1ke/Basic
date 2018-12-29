@@ -6,6 +6,8 @@ import co.m1ke.basic.terminal.defaults.AboutCommand;
 import co.m1ke.basic.terminal.defaults.StopCommand;
 import co.m1ke.basic.terminal.defaults.UptimeCommand;
 import co.m1ke.basic.terminal.defaults.VersionCommand;
+import co.m1ke.basic.utils.Lang;
+import co.m1ke.basic.utils.TimeUtil;
 import co.m1ke.basic.utils.Timings;
 
 import java.util.HashMap;
@@ -59,8 +61,7 @@ public class Terminal {
             registeredTerminals.put(service, terminalThread);
             scannerSessions.put(service, scan);
             terminalThread.start();
-            logger.info(service.getClass().getSimpleName() + ": Terminal service activated.");
-        });
+        }, "Terminal activated with " + registeredCommands.size() + " command" + TimeUtil.numberEnding(registeredCommands.size()) + " in %c%tms" + Lang.RESET + ".");
     }
 
     public static void close(BasicService source) {

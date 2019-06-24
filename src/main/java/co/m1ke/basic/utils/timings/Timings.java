@@ -1,7 +1,8 @@
-package co.m1ke.basic.utils;
+package co.m1ke.basic.utils.timings;
 
 import co.m1ke.basic.callback.Callback;
 import co.m1ke.basic.logger.Logger;
+import co.m1ke.basic.utils.Lang;
 
 public class Timings {
 

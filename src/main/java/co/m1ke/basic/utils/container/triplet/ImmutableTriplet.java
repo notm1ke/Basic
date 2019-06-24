@@ -1,12 +1,12 @@
-package co.m1ke.basic.utils.container;
+package co.m1ke.basic.utils.container.triplet;
 
-public class Triplet<K, V, H> {
+public class ImmutableTriplet<K, V, H> {
 
     private K k;
     private V v;
     private H h;
 
-    public Triplet(K k, V v, H h) {
+    public ImmutableTriplet(K k, V v, H h) {
         this.k = k;
         this.v = v;
         this.h = h;
@@ -20,23 +20,11 @@ public class Triplet<K, V, H> {
         return k;
     }
 
-    public void setK(K k) {
-        this.k = k;
-    }
-
     public V getV() {
         return v;
     }
 
-    public void setV(V v) {
-        this.v = v;
-    }
-
     public H getH() {
         return h;
-    }
-
-    public void setH(H h) {
-        this.h = h;
     }
 }

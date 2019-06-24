@@ -1,4 +1,4 @@
-package co.m1ke.basic.utils;
+package co.m1ke.basic.utils.timings;
 
 public class LegacyTimings {
 

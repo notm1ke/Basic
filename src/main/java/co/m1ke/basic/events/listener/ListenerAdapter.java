@@ -1,6 +1,6 @@
 package co.m1ke.basic.events.listener;
 
-import co.m1ke.basic.utils.Timings;
+import co.m1ke.basic.utils.timings.Timings;
 
 import java.util.ArrayList;
 

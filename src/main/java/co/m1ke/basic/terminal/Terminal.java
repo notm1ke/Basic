@@ -8,7 +8,7 @@ import co.m1ke.basic.terminal.defaults.UptimeCommand;
 import co.m1ke.basic.terminal.defaults.VersionCommand;
 import co.m1ke.basic.utils.Lang;
 import co.m1ke.basic.utils.TimeUtil;
-import co.m1ke.basic.utils.Timings;
+import co.m1ke.basic.utils.timings.Timings;
 
 import java.util.HashMap;
 import java.util.Scanner;

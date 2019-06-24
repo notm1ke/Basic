@@ -1,4 +1,4 @@
-package co.m1ke.basic.utils.container;
+package co.m1ke.basic.utils.container.pair;
 
 public class Pair<K, V> {
 

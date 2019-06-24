@@ -9,14 +9,37 @@ import org.json.JSONObject;
 
 public class Logger implements JsonSerializable {
 
+    public enum Color {
+
+        RESET(Lang.RESET), RED(Lang.RED), YELLOW(Lang.YELLOW), GREEN(Lang.GREEN), CYAN(Lang.CYAN), BLUE(Lang.BLUE), PURPLE(Lang.PURPLE), BLACK(Lang.BLACK), WHITE(Lang.WHITE);
+
+        private String color;
+
+        Color(String color) {
+            this.color = color;
+        }
+
+        public String getColor() {
+            return color;
+        }
+    }
+
     private String name;
+    private Color color;
 
     public Logger() {
         this.name = "Basic";
+        this.color = Color.GREEN;
     }
 
     public Logger(String name) {
         this.name = name;
+        this.color = Color.GREEN;
+    }
+
+    public Logger(String name, Color color) {
+        this.name = name;
+        this.color = color;
     }
 
     public static Logger asSingleton(String name) {
@@ -28,7 +51,7 @@ public class Logger implements JsonSerializable {
     }
 
     public void log(String body) {
-        raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + Lang.GREEN + " | " + Lang.RESET + body);
+        raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + color.getColor() + " | " + Lang.RESET + body);
     }
 
     public void log(LoggingLevel level, String body) {
@@ -36,12 +59,12 @@ public class Logger implements JsonSerializable {
     }
 
     public void log(String color, String head, String body) {
-        raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + Lang.YELLOW + " | [" + color + head + "] " + Lang.RESET + body);
+        raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + this.color.getColor() + " | [" + color + head + "] " + Lang.RESET + body);
     }
 
     public void log(boolean condition, String color, String head, String body) {
         if (condition)
-            raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + Lang.GREEN + " | [" + color + head + "] " + Lang.RESET + body);
+            raw(Lang.WHITE + TimeUtil.format(System.currentTimeMillis()) + this.color.getColor() + " | [" + color + head + "] " + Lang.RESET + body);
     }
 
     public void unlisted(String body) {
@@ -106,10 +129,21 @@ public class Logger implements JsonSerializable {
         return name;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
     @Override
     public JSONObject toJson() {
         return new JSONObject()
-                .put("name", this.name);
+                .put("name", this.name)
+                .put("color", new JSONObject()
+                        .put("name", this.color.name())
+                        .put("value", this.color.getColor()));
     }
 
 }

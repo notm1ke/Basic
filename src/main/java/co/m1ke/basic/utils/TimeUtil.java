@@ -8,12 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("Duplicates")
 public class TimeUtil {
 
 	private static DateFormat DATE_FORMAT = new SimpleDateFormat("M/d/Y HH:mm:ss a");
 	private static DateFormat DATE_DAY_FORMAT = new SimpleDateFormat("MMM d, YYYY");
-
-	public static final long DAY = 24 * 60 * 60 * 1000;
+	private static final long DAY = 24 * 60 * 60 * 1000;
 
 	public static String format(DateFormat format, Long input) {
 		return format.format(input);

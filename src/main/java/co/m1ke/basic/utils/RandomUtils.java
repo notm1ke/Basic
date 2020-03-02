@@ -5,18 +5,16 @@ import java.util.Random;
 
 public class RandomUtils {
 
-    public static final Random RANDOM = new Random();
-
     private static final char[] ALPHABET = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     };
 
     public static <T> T getRandom(List<T> array) {
-        return array.get(RANDOM.nextInt(array.size() - 1));
+        return array.get(new Random().nextInt(array.size() - 1));
     }
 
     public static int getRandomInt() {
-        return RANDOM.nextInt();
+        return new Random().nextInt();
     }
 
     public static int getRandomInt(int i1, int i2) {
@@ -24,11 +22,11 @@ public class RandomUtils {
     }
 
     public static long getNextLong() {
-        return RANDOM.nextLong();
+        return new Random().nextLong();
     }
 
     public static double getRandomDouble() {
-        return RANDOM.nextDouble();
+        return new Random().nextDouble();
     }
 
     public static double getRandomDouble(int i1, int i2) {
@@ -36,15 +34,15 @@ public class RandomUtils {
     }
 
     public static float getRandomFloat() {
-        return RANDOM.nextFloat();
+        return new Random().nextFloat();
     }
 
     public static boolean getRandomBoolean() {
-        return RANDOM.nextBoolean();
+        return new Random().nextBoolean();
     }
 
     public static char getRandomLetter() {
-        return ALPHABET[RANDOM.nextInt(ALPHABET.length) - 1];
+        return ALPHABET[new Random().nextInt(ALPHABET.length) - 1];
     }
 
 }

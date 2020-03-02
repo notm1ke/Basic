@@ -2,6 +2,7 @@ package co.m1ke.basic.terminal;
 
 import co.m1ke.basic.BasicService;
 import co.m1ke.basic.logger.Logger;
+import co.m1ke.basic.scheduler.SimpleScheduler;
 import co.m1ke.basic.terminal.defaults.VersionCommand;
 
 import org.junit.Assert;
@@ -25,6 +26,11 @@ public class TerminalTest implements BasicService {
     @Override
     public double version() {
         return 0.1;
+    }
+
+    @Override
+    public SimpleScheduler getScheduler() {
+        return null;
     }
 
     private Logger logger = Logger.asSingleton("Tests");

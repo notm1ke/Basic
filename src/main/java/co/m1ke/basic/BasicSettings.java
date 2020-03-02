@@ -5,7 +5,7 @@ import co.m1ke.basic.utils.container.Key;
 public enum BasicSettings {
 
     AUTHOR(Key.of("Mike M")),
-    VERSION(Key.of(0.1)),
+    VERSION(Key.of(0.4)),
     WEBSITE(Key.of("https://www.m1ke.co"));
 
     BasicSettings(Key value) {
